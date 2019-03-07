@@ -10,10 +10,10 @@ export default class CustomNavBar extends Component {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                <Nav.Link eventKey={1} componentClass={Link} href="/"  to="/">Home</Nav.Link>
-                <Nav.Link eventKey={2} componentClass={Link} href="/about"  to="/about">About</Nav.Link>
-                <Nav.Link eventKey={3} componentClass={Link} href="/reacttodo"  to="/reacttodo">Telephone</Nav.Link>
-                <Nav.Link eventKey={4} componentClass={Link} href="/reduxtodo"  to="/reduxtodo">reduxtodo</Nav.Link>
+                <Nav.Link eventKey={1} componentClass={Link} href="/">Home</Nav.Link>
+                <Nav.Link eventKey={2} componentClass={Link} href="/about" >About</Nav.Link>
+                <Nav.Link eventKey={3} componentClass={Link} href="/reacttodo" >Telephone</Nav.Link>
+                <Nav.Link eventKey={4} componentClass={Link} href="/reduxtodo" >reduxtodo</Nav.Link>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
