@@ -16,10 +16,10 @@ class Routes extends Component {
                 <div>
                     <CustomNavBar/>
                     <Switch>
-                        <Route path="/" exact component={Home}/>
+                        <Route path="/" exact  component={ReactTodo} />
+                        <Route path="/home" exact component={Home}/>
                         <Route path="/about" exact component={About}/>
                         <Route path="/reduxtodo" exact component={ReduxTodo} />
-                        <Route path="/reacttodo" exact  component={ReactTodo} />
                         <Route component={PageNotFound} />
                     </Switch>
                 </div>
