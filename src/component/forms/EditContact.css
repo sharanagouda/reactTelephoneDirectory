@@ -1,6 +1,6 @@
 /* Forms
   =============== */
-  [type=color], [type=date], [type=datetime], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], [type=week], [type=time], select, textarea {
+  /* [type=color], [type=date], [type=datetime], [type=datetime-local],[type=text], [type=email], [type=month], [type=number], [type=password], [type=search], .inputField, select, textarea {
     display: block;
     border: 1px solid #cdcdcd;
     border-radius: 4px;
@@ -76,4 +76,4 @@
   :-moz-placeholder,
   :-ms-input-placeholder {
     color: #9a9a9a; }
-  
+   */

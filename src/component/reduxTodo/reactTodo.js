@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ContactListTable from "./userTable/ContactListTable"
-import AddContact from './forms/AddContact';
-import EditContact from './forms/EditContact';
+import ContactListTable from "../../component/userTable/ContactListTable"
+import AddContact from '../../component/forms/AddContact';
+import EditContact from '../../component/forms/EditContact';
 import "./reactTodo.css";
 
 class ReactTodo extends Component {

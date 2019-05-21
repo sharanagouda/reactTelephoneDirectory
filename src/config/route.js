@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {Route,BrowserRouter as Router, Switch} from "react-router-dom";
 
-import ReactTodo from "./../component/reactTodo";
-import ReduxTodo from "./../component/reduxTodo/reduxTodo";
+import ReduxTodo from "../container/reduxTodo/reactTodo";
 import About from '../container/about/About';
 import Home from '../container/home/Home';
 import CustomNavBar from '../container/customNavbar/CustomNavBar';
@@ -16,7 +15,7 @@ class Routes extends Component {
                 <div>
                     <CustomNavBar/>
                     <Switch>
-                        <Route path="/" exact  component={ReactTodo} />
+                        <Route path="/" exact  component={Home} />
                         <Route path="/home" exact component={Home}/>
                         <Route path="/about" exact component={About}/>
                         <Route path="/reduxtodo" exact component={ReduxTodo} />

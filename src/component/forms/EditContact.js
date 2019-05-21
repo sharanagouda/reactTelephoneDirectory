@@ -42,15 +42,15 @@ class EditContact extends Component{
       }}>
         <label>
           Name:
-          <input type="text" required value={this.state.name} ref={(input) => this.input = input} onChange={this.handleNameChange}/>
+          <input type="text" className="inputField" required value={this.state.name} ref={(input) => this.input = input} onChange={this.handleNameChange}/>
         </label>
         <label>
           Contact no:
-          <input type="number" required pattern="[0-9]*" value={this.state.contactno} ref={(input) => this.input = input} onChange={this.handleContactNoChange}/>
+          <input type="number" className="inputField" required pattern="[0-9]*" value={this.state.contactno} ref={(input) => this.input = input} onChange={this.handleContactNoChange}/>
         </label>
         <label>
           pincode
-          <input type="number" required pattern="[0-9]*" value={this.state.pincode} ref={(input) => this.input = input} onChange={this.handleAddressChanage}/>
+          <input type="number" className="inputField" required pattern="[0-9]*" value={this.state.pincode} ref={(input) => this.input = input} onChange={this.handleAddressChanage}/>
         </label>
         <input type="submit" value="Update Details" />
       </form>
