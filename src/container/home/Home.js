@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component,addons } from 'react';
 import './Home.css';
+import Chips from "./Chips";
 
 
 
@@ -33,28 +34,20 @@ export class Home extends Component {
     });
   }
 
-  keyDown = (event) => {
-    // TODO: on backspace remove last chip
+  onKeyDown(event) {
+    let keyPressed = event.which;
 
-    // let { chips, inputValue, chipSelectedToRemove, suggestionsList } = this.state;
-    // if(event.target.value === '' && chips.length > 0) {
-    //   const key = event.keyCode || event.charCode;
-    //   if(key === 8 || key === 46) {
-    //     if(chipSelectedToRemove) {
-    //       let filteredChips = Object.assign({}, chips);
-    //       filteredChips = filteredChips.slice(-1)[0];
-    //       this.setState({
-    //         chipSelectedToRemove: false,
-    //         suggestionsList: suggestionsList.concat(chips[chips.length-1]),
-    //         chips: filteredChips,
-    //       })
-    //       document.getElementById("chipsList").lastChild.classList.remove('selected');
-    //     } else if(!chipSelectedToRemove) {
-    //       this.setState({ chipSelectedToRemove: true })
-    //       document.getElementById("chipsList").lastChild.classList.add('selected');
-    //     }
-    //   }
-    // } 
+    if (keyPressed === this.state.KEY.enter ||
+        (keyPressed === this.state.KEY.tab && event.target.value)) {
+      event.preventDefault();
+      this.updateChips(event);
+    } else if (keyPressed === this.state.KEY.backspace) {
+      let chips = this.state.chips;
+
+      if (!event.target.value && chips.length) {
+        this.deleteChip(chips[chips.length - 1]);
+      }
+    }
   }
 
   handleInputChange = (event) => {
@@ -109,7 +102,7 @@ export class Home extends Component {
                   chips.map((chip, key) => {
                     return(
                       <li key={key} className="chipBox">
-                      <img src={chip.photo} alt="defaultPhoto" style={{width:"20px", height:"20px"}}/>&nbsp;&nbsp;
+                      <img src={chip.photo} alt="defaultPhoto" style={{width:"30px", height:"30px", radius:"10px"}}/>&nbsp;&nbsp;
                           <span>{chip.name}</span>
                           <span className="deleteIcon" onClick={() => this.removeChip(chip)}>X</span>
                       </li>)
@@ -118,7 +111,6 @@ export class Home extends Component {
               </ul>
             )
           }
-
           <div className="autoComplete">
             <input 
               type="text"
@@ -126,7 +118,7 @@ export class Home extends Component {
               className="autoCompleteInput"
               defaultValue={inputValue}
               onChange={this.handleInputChange}
-              onClick={this.handleInputClick}
+               onClick={this.handleInputClick}
               onKeyDown={this.keyDown}
             />
               {
@@ -147,9 +139,13 @@ export class Home extends Component {
                 )
               }
           </div>
+          <div>
+          
+          </div>
         </div>
     );
   }
+
 }
 
 
